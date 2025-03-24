@@ -1,0 +1,102 @@
+
+/**
+ * Navigation
+ */
+
+.navbar-brand {
+  max-width: calc(100% - 70px);
+}
+
+.dms-navbar-toggler {
+  $padding: 0.75em;
+  color: rgba($white, 0.7);
+  font-size: 1.35rem;
+  border-radius: 4px;
+  padding-left: $padding;
+  padding-right: $padding;
+  box-shadow: none;
+  border: none;
+  outline: none;
+
+  nav.navbar-expand-md & {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  nav.navbar-expand-lg & {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+
+}
+
+
+// Allow for color class overriding of nav items.
+.nav-item {
+
+  &[class*=has-][class*=-color] {
+    .nav-link {
+      color: inherit;
+    }
+  }
+
+}
+
+
+#navbar-primary-menu {
+  ul {
+    margin: 0;
+  }
+
+  .dropdown-toggle::after {
+    content: none;
+  }
+
+  .nav-caret {
+    color: $brand-2;
+    margin-left: 0.35em;
+  }
+
+  .dropdown-menu {
+    $dropdown-color: white;
+    $dropdown-color-hover: $dropdown-color;
+    $dropdown-background-color: $brand-1;
+    $dropdown-background-color-hover: darken($brand-1, 3%);
+    $dropdown-border-color: darken($brand-1, 5%);
+    background: $dropdown-background-color;
+    color: $dropdown-color;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      background: $dropdown-background-color;
+      color: $dropdown-color;
+      //border-bottom: 1px solid $dropdown-border-color;
+      border-bottom: none;
+      transition: color 0.3s ease;
+      padding: 0.35rem 0.75rem;
+
+      &:hover {
+        background: $dropdown-background-color-hover;
+        color: $dropdown-color-hover;
+      }
+    }
+  }
+
+}
+

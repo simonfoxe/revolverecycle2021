@@ -1,0 +1,14 @@
+
+/**
+ * Buttons
+ */
+
+// Add button variants for all brand colors
+@each $color, $value in $brand-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}

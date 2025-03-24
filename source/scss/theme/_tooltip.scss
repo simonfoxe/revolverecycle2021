@@ -1,0 +1,30 @@
+/**
+ * Tooltips
+ */
+
+
+// Bootstrap Tooltip
+.tooltip {
+
+  // Color variations
+  @each $color, $value in $brand-colors {
+    &.tooltip-bg-#{$color} {
+      .tooltip-inner {
+        background-color: var(--bs-#{$color});
+      }
+      &.bs-tooltip-top .tooltip-arrow:before {
+        border-top-color: #{$value} !important;
+      }
+      &.bs-tooltip-right .tooltip-arrow:before {
+        border-right-color: #{$value} !important;
+      }
+      &.bs-tooltip-left .tooltip-arrow:before {
+        border-left-color: #{$value} !important;
+      }
+      &.bs-tooltip-bottom .tooltip-arrow:before {
+        border-bottom-color: #{$value} !important;
+      }
+    }
+  }
+
+}

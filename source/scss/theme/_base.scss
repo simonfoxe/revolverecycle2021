@@ -1,0 +1,432 @@
+/**
+ * DMS Theming
+ */
+
+$body-bg: #fff !default;
+$body-color: #212529 !default;
+$link-color-root: var(--bs-primary) !default;
+$headings-color: inherit !default;
+$border-radius-root: 4px !default;
+$input-bg-root: #fff !default;
+$input-color-root: var(--body-color) !default;
+$input-border-color-root: #ced4da !default;
+$box-padding: 20px !default;
+$box-padding-lg: 50px !default;
+
+:root {
+  --body-background-color: #{ $body-bg };
+  --background-color: #{ $body-bg };
+  --body-color: #{ $body-color };
+  --link-color: #{ $link-color-root };
+  --headings-color: #{ $headings-color };
+  --border-radius: #{ $border-radius-root };
+  --input-bg: #{ $input-bg-root };
+  --input-color: #{ $input-color-root };
+  --input-border-color: #{ $input-border-color-root };
+}
+
+// Theme base styles
+html {
+
+}
+
+body {
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+
+// Disable outline on click event in Chrome for accessibility divs with a tabindex
+div[tabindex="-1"] {
+  outline: none;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+// Responsive images
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+.wp-block-image  {
+  figcaption {
+    text-align: center;
+    padding: 0 10px;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}
+
+
+// Responsive iFrame
+.responsive-iframe {
+  display: block;
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  -webkit-overflow-scrolling: touch; /*<<--- THIS IS THE KEY*/
+
+  &.aspect-16-9 {
+    padding-bottom: 56.25%; /* 16:9 */
+  }
+  &.aspect-4-3 {
+    padding-bottom: 75%; /* 4:3 */
+  }
+  &.aspect-3-2 {
+    padding-bottom: 66.66%; /* 3:2 Aspect Ratio */
+  }
+  &.aspect-3-2 {
+    padding-bottom: 100%; /* 1:1 Aspect Ratio */
+  }
+}
+.responsive-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+// Headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  $heading-text-transform: normal !default;
+  margin-top: $headings-margin-top;
+  margin-bottom: $headings-margin-bottom;
+  margin-top: $headings-margin-top;
+  margin-bottom: $headings-margin-bottom;
+  text-transform: $heading-text-transform;
+  color: var(--headings-color);
+
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .has-text-color & {
+    color: inherit;
+  }
+
+}
+
+// Lists
+ul, ol {
+  margin: 1em 0;
+  padding-left: 1.6em;
+
+  ul, ol {
+    margin: 0.2em 0 0.65em;
+  }
+
+  li {
+    margin-bottom: 0.1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.list-group {
+    list-style: none;
+    padding-left: 0;
+  }
+
+}
+
+// Quotes
+blockquote {
+  @extend .blockquote;
+  $color_body_accent: #ccc !default;
+  border-left: 3px solid $color_body_accent;
+  padding: 0.3em 1em 1em;
+  margin: 1.8rem 1.5rem;
+  line-height: 1.5 !important;
+
+  p {
+    line-height: inherit !important;
+  }
+
+}
+
+// Smooth scrolling
+[id] {
+  scroll-snap-margin-top: $scroll-margin-top;
+  scroll-margin-top: $scroll-margin-top;
+}
+
+
+// Font sizes
+.has-small-font-size { font-size: 14px; }
+.has-medium-font-size { font-size: 18px; }
+.has-large-font-size { font-size: 24px; }
+.has-extra-large-font-size { font-size: 28px; }
+
+
+// WordPress Color Classes
+@each $key, $value in $colors {
+  .has-#{$key}-color {
+    color: $value !important;
+    color: var(--bs-#{$key}) !important;
+  }
+  .has-#{$key}-background-color {
+    background-color: $value !important;
+    background-color: var(--bs-#{$key}) !important;
+  }
+}
+@each $key, $value in $theme_colors {
+  .has-#{$key}-color {
+    color: $value !important;
+    color: var(--bs-#{$key}) !important;
+  }
+  .has-#{$key}-background-color {
+    background-color: $value !important;
+    background-color: var(--bs-#{$key}) !important;
+  }
+}
+@each $key, $value in $brand_gradients {
+  .has-#{$key} {
+    background: $value !important;
+  }
+}
+
+// Floated elements
+.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+
+  & img {
+    max-width: 40vw;
+    margin-bottom: 0;
+  }
+  &.wp-block-button  {
+    margin-bottom: 1em;
+  }
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+
+  & img {
+    max-width: 40vw;
+    margin-bottom: 0;
+  }
+  &.wp-block-button  {
+    margin-bottom: 1em;
+  }
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Image captions
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image.is-resized > figcaption,
+.wp-caption-text {
+  margin-top: 0;
+  font-size: $font-size-sm;
+  background: $gray-300;
+  padding: 1em;
+}
+
+// Pagination
+.pagination-wrapper {
+  margin-top: $grid-gutter-width * 2;
+  margin-bottom: $grid-gutter-width;
+}
+
+
+// Bootstrap containers
+.container,
+.container-fluid {
+  min-width: $container-fluid-min-width;
+}
+
+// Force fluid to have a max
+.container,
+.container-fluid {
+  max-width: $container-fluid-max-width;
+}
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
+
+// Fix BS5 gutter variable scope
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 0.75rem;
+  --bs-gutter-y: 0;
+}
+
+// Align wide settings
+.alignfull {
+  margin: 0 calc( 50% - 50vw );
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.alignwide {
+  margin: 0 -#{$grid-gutter-width * 0.5};
+  max-width: 100vw;
+  width: auto;
+}
+
+// Handle group blocks with margins and background colors
+.wp-block-group.alignfull.has-background {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+// At "medium" breakpoint it moves to fill in half the viewport's whitespace
+@media ( min-width: #{ $container-fluid-max-width } ) {
+  .alignwide {
+    margin: 0 calc( ( ( ( 100vw - 100% ) / 2 ) / 2 ) * -1 );
+    max-width: calc( 100% + ( ( 100vw - 100% ) / 2 ) );
+    width: calc( 100% + ( ( 100vw - 100% ) / 2 ) );
+  }
+}
+
+// Custom alignment to break outside the layout at large widths
+.align-outside {
+  @include media-breakpoint-up(xl) {
+    margin-left: -#{ $box-padding-lg };
+    margin-right: -#{ $box-padding-lg };
+    width: auto;
+  }
+}
+
+
+
+
+// Boxes
+%box {
+  $box-border-radius: $border-radius !default;
+  $box-box-shadow: $box-shadow !default;
+  $box-margin-top: 1rem !default;
+  $box-margin-bottom: 1rem !default;
+  background-color: $gray-300;
+  padding: $box-padding-sm;
+  margin-top: $box-margin-top;
+  margin-bottom: $box-margin-bottom;
+  border-radius: $box-border-radius;
+  box-shadow: $box-box-shadow;
+
+  > :first-child { margin-top:0; }
+  > :last-child { margin-bottom: 0;}
+
+  // Handle when box is used as a group block
+  > .wp-block-group__inner-container {
+    > :first-child { margin-top:0; }
+    > :last-child { margin-bottom: 0;}
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: $box-padding;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: $box-padding-lg;
+  }
+
+}
+
+.box {
+  @extend %box;
+}
+$box-opacity: 1 !default;
+@each $color, $value in $colors {
+  .box-#{$color} {
+    background-color: rgba($value, $box-opacity);
+  }
+}
+@each $color, $value in $grays {
+  .box-gray-#{$color} {
+    background-color: rgba($value, $box-opacity);
+  }
+}
+@for $i from 1 through 9 {
+  .box-opacity-#{$i} {
+    background-color: RGBA(255,255,255,#{ "0." + $i });
+  }
+}
+
+.box-outside {
+  padding: $box-padding;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: -#{ $box-padding-lg };
+    margin-right: -#{ $box-padding-lg };
+    padding: $box-padding-lg;
+    width: auto;
+  }
+}
+
+
+
+
+/**
+ * HR Block Separator
+ */
+.wp-block-separator {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  opacity: 0.5;
+
+  &.is-style-wide {
+    width: 100%;
+  }
+
+  &.is-style-dots {
+    width: 100%;
+    &:before {
+      padding-left: 0;
+      padding-right: 0;
+      font-size: 5em;
+      margin-right: -1em;
+      letter-spacing: 1em;
+      line-height: 0.5;
+    }
+  }
+
+}
+
+
+/**
+ * Textures
+ */
+
+.has-texture-tile {
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+}
+
+.has-texture-stripes {
+  background-image: url("https://www.transparenttextures.com/patterns/cross-stripes.png");
+}

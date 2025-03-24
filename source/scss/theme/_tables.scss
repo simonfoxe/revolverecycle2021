@@ -1,0 +1,84 @@
+
+.wp-block-table {
+	margin: 1.5em 0;
+	overflow-x: unset;
+
+  table {
+		width: 100%;
+	}
+
+	thead {
+		th {
+			padding: 0.6em 0.6em;
+			vertical-align: bottom;
+			font-weight: bold;
+			position: relative;
+			border-bottom: 2px solid currentcolor;
+
+			/*
+			&:after {
+				content: ' ';
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				width: 100%;
+				height:2px;
+				background: currentcolor;
+			}
+			*/
+		}
+	}
+
+	tbody {
+		border-top: 1px solid $brand-grayscale-5;
+
+		tr {
+			border-bottom: 1px solid $brand-grayscale-5;
+			> :first-child {
+				border-left: 1px solid $brand-grayscale-5;
+			}
+		}
+
+		td, th {
+			vertical-align: top;
+			padding: 0.6em 0.6em;
+			border-right: 1px solid $brand-grayscale-5;
+		}
+
+		th {
+			font-weight: bold;
+		}
+
+		td {
+		}
+
+	}
+
+	&.is-style-stripes {
+
+		thead {
+			th {
+				border-bottom: 2px solid currentcolor;
+			}
+		}
+
+		tbody {
+			border: none;
+			tr {
+				border: none;
+			}
+			td, th {
+				border: none;
+			}
+			tr:nth-child(2n+1) {
+				background-color: darken($gray-100, 2%);
+			}
+			tr:nth-child(2n) {
+				background-color: $gray-100;
+			}
+		}
+
+	}
+
+}
+

@@ -1,0 +1,63 @@
+/**
+ * Yoast SEO FAQ
+ */
+
+
+.schema-faq {
+	font-size: 1rem;
+
+	.schema-faq-section {
+		margin: 20px 0;
+		padding: 0;
+		border-radius: $border-radius;
+		border: 1px solid $brand-2;
+		box-shadow: $box-shadow;
+	}
+
+	.schema-faq-question {
+		$caret_size: 0.45rem;
+		position: relative;
+		cursor: pointer;
+		display: block;
+		padding: 1rem;
+		margin: 0;
+		background: lighten($brand-2, 30%);
+		color: $brand-1;
+		padding-right: 3rem;
+
+		&:after {
+			position: absolute;
+			content: '';
+			text-align: center;
+			line-height: 1;
+			width: $caret_size;
+			height: $caret_size;
+			right: 1rem;
+			top: 0.5rem;
+			bottom: 0;
+			margin: auto;
+			border-top: $caret_size solid inherit;
+			border-left: $caret_size solid transparent;
+			border-right: $caret_size solid transparent;
+			border-bottom: $caret_size solid transparent;
+		}
+
+		&.show {
+			&:after {
+				top: -0.75rem;
+				border-top: $caret_size solid transparent;
+				border-left: $caret_size solid transparent;
+				border-right: $caret_size solid transparent;
+				border-bottom: $caret_size solid inherit;
+			}
+		}
+
+	}
+
+	.schema-faq-answer {
+		border-top: 1px solid $brand-2;
+		padding: 1rem;
+		display: none;
+	}
+
+}

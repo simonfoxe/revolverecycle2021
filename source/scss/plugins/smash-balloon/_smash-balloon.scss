@@ -1,0 +1,28 @@
+/**
+ * Smash Balloon social plugins
+ */
+.sbi {
+
+	a {
+		text-decoration: none !important;
+	}
+
+	.has-white-color & {
+
+		a {
+			color: rgba($white, 0.9);
+			&:hover {
+				color: $white;
+			}
+		}
+
+		.sbi_info {
+			color: rgba($white, 0.8) !important;
+			&:hover {
+				color: $white !important;
+			}
+		}
+
+	}
+
+}

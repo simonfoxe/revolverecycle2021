@@ -1,0 +1,114 @@
+/**
+ * Offcanvas
+ */
+.offcanvas {
+  $offcanvas-color: $white !default;
+  $offcanvas-link-color: rgba($white, 0.7) !default;
+  $offcanvas-link-hover-color: $white !default;
+  $offcanvas-nav-caret-color: $brand-2 !default;
+  $offcanvas-font-size: var(--bs-body-font-size) !default;
+  $offcanvas-font-weight: $headings-font-weight !default;
+  $offcanvas-heading-font-size: 1.8rem !default;
+  $offcanvas-heading-color: $offcanvas-color !default;
+  $offcanvas-background-color: $brand-1 !default;
+  $offcanvas-submenu-list-style: circle !default;
+
+  background: $offcanvas-background-color;
+  color:  $offcanvas-color;
+  font-size: $offcanvas-font-size;
+  font-weight: $offcanvas-font-weight;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $offcanvas-heading-color;
+  }
+
+  .offcanvas-heading {
+    color: $offcanvas-heading-color;
+    font-size: $offcanvas-heading-font-size;
+  }
+
+  .btn-offcanvas {
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: .375rem .75rem;
+  }
+
+  .nav-caret {
+    color: $offcanvas-nav-caret-color;
+    margin-left: 5px;
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  .nav {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      padding-top: 0.35em;
+      padding-bottom: 0.35em;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: $offcanvas-link-color;
+      display: block;
+
+      &:hover {
+        color: $offcanvas-link-hover-color;
+      }
+    }
+
+    ul.sub-menu {
+      list-style: $offcanvas-submenu-list-style;
+      padding: 0;
+      margin: 0;
+      padding-left: 1em;
+
+      li {
+        margin: 0;
+
+        &:first-child {
+          margin-top: 0.35em;
+        }
+
+      }
+    }
+
+
+  }
+
+  .has-btn {
+    margin-left: 0 !important;
+  }
+
+}
+
+.offcanvas-header,
+.offcanvas-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.offcanvas-body-wrapper {
+  overflow-y: auto;
+  height: calc(100vh - 80px);
+}
+
+
+.offcanvas-body-border {
+  border-top: 1px solid rgba($white, 0.1);
+  width: 100%;
+  display: block;
+  height: 1px;
+  padding-bottom: 20px;
+}
+
+.offcanvas-body {
+  padding-top: 0;
+}

@@ -1,0 +1,6 @@
+<?php
+/**
+ * Media related functions
+ */
+
+

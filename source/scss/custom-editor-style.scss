@@ -1,0 +1,115 @@
+/**
+ * Custom Editor Styles
+ *
+ */
+
+// Abstracts
+@import "abstracts/abstracts";
+@import "../../lib/bootstrap/scss/functions";
+@import '../../lib/bootstrap/scss/mixins';
+
+// Theme Variables
+@import "variables/variables";
+
+// Libs - Bootstrap
+@import '../../lib/bootstrap/scss/variables';
+@import '../../lib/bootstrap/scss/root';
+
+/**
+ * Base
+ */
+
+// Reset internal body margin in TinyMCE
+body#tinymce {
+  margin: 9px 10px;
+}
+
+// Main column width
+.wp-block {
+  max-width: $container-fluid-max-width !important;
+}
+
+// Width of "wide" blocks
+.wp-block[data-align="wide"] {
+  max-width: 1440px !important;
+}
+
+// Width of "full-wide" blocks
+.wp-block[data-align="full"] {
+  max-width: none !important;
+}
+
+// Theme + bootstrap typography
+.edit-post-visual-editor p,
+.edit-post-visual-editor,
+.blocks-rich-text__tinymce.mce-content-body {
+  line-height: inherit;
+  font-size: inherit;
+}
+
+// Insert styles within the Gutenberg style wrapper
+.editor-styles-wrapper {
+
+  /**
+   * Vendor Body Styles
+   */
+  @import "../../lib/bootstrap/scss/bootstrap";
+
+  /**
+   * Theme Elements + Components
+   */
+
+  // Theme
+  @import "theme/theme";
+
+  // Blocks
+  @import "blocks/blocks";
+
+  // Components
+  @import "components/components";
+
+
+  font-family: $font-family-base;
+  font-weight: $font-weight-base;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    margin-top: $headings-margin-top;
+    margin-bottom: $headings-margin-bottom;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  // Button styling in editor
+  .wp-block-button {
+    .rich-text {
+      border-radius: $btn-border-radius;
+      font-weight: $btn-font-weight;
+    }
+  }
+
+  // Generate button classes for each brand color
+  @each $color, $value in $colors {
+    .btn-#{$color} {
+      @include button-variant($value, $value);
+    }
+  }
+  @each $color, $value in $colors {
+    .btn-outline-#{$color} {
+      @include button-outline-variant($value);
+    }
+  }
+
+  // Form overrides
+  input[type="text"],
+  textarea {
+    background: $white !important;
+    color: $black !important;
+  }
+
+}
+

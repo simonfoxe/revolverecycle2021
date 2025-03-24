@@ -1,0 +1,353 @@
+/**
+ * Nano / Bootstrap 4 Gravity Forms styles
+ */
+.gform_wrapper{
+
+	// Validation + Errors
+	.validation_error {
+	  @extend .alert;
+	  @extend .alert-danger;
+	}
+	.gform_validation_errors {
+		background: lighten($danger, 80%);
+		border-radius: $border-radius;
+		border: 1.5px solid $danger;
+		box-shadow: 0 1px 4px rgba(0,0,0,.11),0 0 4px rgba(18,25,97,.0405344);
+		margin-bottom: 20px;
+		margin-top: 20px;
+		padding: 16px 16px 16px 48px;
+		position: relative;
+		width: 100%;
+
+		& > h2 {
+	    color: $danger;
+	    font-size: 16px;
+	  	margin: 0;
+			padding-top: 3px;
+
+	  	.gform-icon {
+  	    align-items: center;
+  	    display: flex;
+  	    font-size: 28px;
+  	    height: 100%;
+  	    left: 12px;
+  	    position: absolute;
+  	    top: 0;
+	  	}
+		}
+
+		ol {
+			margin: 1em 0 0 0;
+			padding: 0 0 0 0;
+			font-size: 14px;
+
+			li {
+				margin-bottom: 3px;
+			}
+		}
+	}
+	// Don't display validation question numbers in errors if the quesitons already have numbers in them.
+	&.has-question-numbers_wrapper .gform_validation_errors {
+		ol {
+			list-style: none;
+		}
+	}
+	.gfield_error {
+		background: lighten($danger, 80%) !important;
+
+	  .gfield_label {
+	    color: $danger;
+	  }
+	  input, select, textarea {
+	    border-color: $danger;
+	  }
+	  .validation_message {
+	    color: $danger;
+	    font-weight: bold;
+	  }
+	}
+
+	// Header
+	.gform_heading {
+		margin-bottom: 40px;
+	}
+
+	// Global Fields
+	.gform_fields {
+		grid-row-gap: 25px !important;
+	}
+	.gfield_required {
+	  padding-left: 2px;
+	  color: $danger;
+	  font-size: 0.8em;
+	}
+	.gfield_description {
+	  font-style: italic;
+	  margin: 0.25em 0;
+	  font-size: .8em;
+	  color: $gray-600;
+	}
+	.gfield.field_description_above {
+		> .gfield_label + .gfield_description {
+		  margin: -0.3em 0 0.5em;
+		}
+	}
+
+	// Field: Section
+	.gfield.gsection {
+	  border-left: 10px solid $info;
+	  border-top: 1px solid $info;
+	  padding: 10px;
+	  margin-top: 40px;
+
+	  .gsection_title {
+	  	margin-bottom: 0;
+	  }
+	}
+
+
+	// Field: Complex
+	.ginput_complex {
+    @extend .input-group;
+    input {
+      @extend .form-control;
+    }
+    span {
+    	label {
+    		color: $gray-600;
+    		font-size: 0.9em;
+    		letter-spacing: 0.03em;
+     	}
+    }
+    &.gf_name_has_2 {
+      span {
+        display: block;
+        width: 50%;
+        &:first-child {
+          padding-right: 10px;
+        }
+      }
+    }
+    .ginput_full {
+      width: 100%;
+    }
+    .ginput_left {
+      width: 50%;
+      padding-right: 1%;
+    }
+    .ginput_right {
+      width: 50%;
+    }
+  }
+
+  // Field: Input Text
+  .ginput_container {
+  	input[type=text] {
+  		@extend .form-control;
+  	}
+  }
+
+	// Field: email, phone
+	.ginput_container_phone,
+	.ginput_container_email {
+		input {
+			@extend .form-control;
+		}
+	}
+
+	// Field: textarea
+	.ginput_container_textarea {
+		textarea {
+			@extend .form-control;
+		}
+		.ginput_counter {
+			margin-top: 5px;
+		}
+	}
+
+	// Field: select
+	.ginput_container {
+		select {
+			@extend .form-control;
+		}
+	}
+
+	// Field: Radio
+	.ginput_container_radio {
+		.gchoice {
+			position: relative;
+			padding-left: 20px;
+		}
+		input {
+			position: absolute;
+			left: 0;
+			top: 0 !important;
+			bottom: 0 !important;
+			margin-top: auto !important;
+			margin-bottom: auto !important;
+		}
+		.gfield-choice-input + label {
+			margin: 0 0 5px 0;
+		}
+	}
+
+	// Field: Checkboxes
+	.ginput_container {
+		input[type=checkbox] {
+			position: absolute;
+			left: 0;
+			top: 4px;
+
+			+ label {
+				margin: 0 0 5px 0;
+			}
+		}
+
+		&.ginput_container_consent,
+		.gchoice {
+			position: relative;
+			padding-left: 20px;
+		}
+	}
+
+	// Field: Survey
+	.gsurvey-survey-field {
+
+		// Rank
+		.ginput_container_rank {
+			.gsurvey-rank-choice {
+				padding-left: 20px !important;
+				white-space: normal !important;
+			}
+
+			.ui-sortable-helper {
+				border: 2px dashed $primary !important;
+				background: rgba(255,255,255,0.6);
+			}
+		}
+
+	}
+
+	// Progress Bar
+	.gf_progressbar_wrapper {
+		margin-bottom: 30px;
+
+		.gf_progressbar_title {
+			@extend .text-muted;
+			@extend .small;
+			margin: 0 0 4px 0;
+		}
+	  .gf_progressbar {
+	    @extend .progress;
+      height: auto;
+
+	    .gf_progressbar_percentage {
+	      @extend .progress-bar;
+	      background: $primary;
+
+	      span {
+          display: block;
+          width: auto;
+          float: right;
+          margin-right: 8px;
+          margin-left: 8px;
+          line-height: 21px;
+          padding-top: 3px;
+          font-size: 13px;
+          min-width: 2em;
+	      }
+	    }
+	  }
+
+	}
+
+	// Footer + Submit
+	.gform_page_footer,
+	.gform_footer {
+	  margin-top: 30px;
+
+	  input.gform_button {
+	    @extend .btn;
+	    @extend .btn-primary;
+	  }
+	  input.gform_next_button {
+	    @extend .btn;
+	    @extend .btn-primary;
+	  }
+	  input.gform_previous_button {
+	  	@extend .btn;
+	    @extend .btn-outline-primary;
+	  }
+
+	  .gform_ajax_spinner {
+	  	margin-left: 1em;
+	  }
+	}
+
+}
+
+
+/*
+.ginput_price {
+    display: none;
+}
+*/
+.gfp_big_button {
+	$button_color: $white;
+	$button_background_color: $brand-2;
+	$button_background_color_hover: darken($button_background_color, 10%);
+	$button_background_color_checked: #f47f26;
+
+	.gchoice {
+		padding-left: 0 !important;
+		margin-bottom: 6px !important;
+	}
+
+	.gfield_radio {
+
+
+	  label {
+	    max-width: 300px;
+	    width: 100%;
+	    margin: 0px auto;
+	    padding: 10px 30px;
+	    float: none;
+	    background: $button_background_color;
+	    color: $button_color;
+	    letter-spacing: 0.09375rem;
+	    border-radius: 3px;
+	    font-weight: 600;
+	    margin: 0;
+	    display: block;
+	    transition: background-color 300ms ease-out;
+	    -webkit-appearance: none;
+	    cursor: pointer;
+	    line-height: 1;
+	    position: relative;
+	    text-decoration: none;
+	    text-align: center;
+	    font-size: 1.1em;
+	    box-sizing: border-box;
+
+      &:active,
+      &:focus, {
+  		  background: $button_background_color_hover;
+  		}
+
+	    &:hover {
+			  background: $button_background_color_hover;
+			}
+	  }
+
+
+  	input[type=radio] {
+      display:none;
+
+      &:checked + label {
+      	background: $button_background_color_checked;
+      }
+    }
+
+	}
+
+}

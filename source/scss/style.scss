@@ -1,0 +1,33 @@
+/**
+ * Theme Main Styles
+ *
+ */
+
+// Abstracts
+@import "abstracts/abstracts";
+@import "../../lib/bootstrap/scss/functions";
+
+// Bootstrap with Child Overrides
+@import "variables/variables";
+
+// Libs
+@import "../../lib/bootstrap/scss/bootstrap";
+@import "../../lib/aos/src/sass/aos";
+
+// Theme
+@import "theme/theme";
+
+// Layout
+@import "layout/layout";
+
+// Blocks
+@import "blocks/blocks";
+
+// Components
+@import "components/components";
+
+// Plugins
+@import "plugins/plugins";
+
+// Page specific styles
+@import "pages/pages";

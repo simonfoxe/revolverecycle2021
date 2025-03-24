@@ -1,0 +1,83 @@
+/**
+ * Bootstrap variable overrides
+ */
+
+// Features
+$enable-grid-classes: true !default;
+$enable-cssgrid: true !default;
+$enable-negative-margins: true !default;
+
+// Grid
+//$container-fluid-max-width: 1320px !default;
+$container-fluid-max-width: 1140px !default;
+$container-fluid-min-width: 320px !default;
+
+// Spacing
+$box-padding: 30px !default;
+$box-padding-lg: 50px !default;
+$box-padding-sm: 20px !default;
+
+// Layout
+$body-bg: $brand-1 !default;
+$body-color: $brand-4 !default;
+$content-bg: $brand-5 !default;
+
+// Typography
+$font-size-base: 1rem !default;
+$font-weight-light: 500;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+$headings-font-weight: 600;
+$headings-margin-bottom: 0.3em;
+$headings-margin-top: 1em;
+$headings-color: $brand-1;
+$h1-font-size: $font-size-base * 2.8 !default;
+$display-line-height: 1.1 !default;
+$display-font-weight: $headings-font-weight !default;
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 80px,
+  2: 60px,
+  3: 52px,
+  4: 44px,
+  5: 38px,
+  6: 32px
+) !default;
+
+// Forms
+$border-radius: var(--border-radius) !default;
+$input-bg: var(--input-bg) !default;
+$input-color: var(--input-color) !default;
+$input-border-color: var(--input-border-color) !default;
+$input-btn-padding-y: .375rem !default;
+$input-btn-padding-x: .75rem !default;
+
+// Buttons
+$btn-font-weight: bold !default;
+$btn-border-width: 2px !default;
+
+// Shadows
+$box-shadow: 0px 2.767256498336792px 2.2138051986694336px 0px #00000005,0px 6.650102138519287px 5.32008171081543px 0px #00000007,0px 12.521552085876465px 10.017241477966309px 0px #00000009,0px 22.3363094329834px 17.869047164916992px 0px #0000000B !default;
+$box-shadow-inset: 0 0 20px rgba(0,0,0,.8) inset !default;
+$box-shadow-inset-y: inset 0px 25px 20px -25px rgba(0, 0, 0, 0.8), inset 0px -25px 20px -25px rgba(0, 0, 0, 0.8) !default;
+
+// Navigation
+$navbar-nav-link-padding-x: 0.75rem !default;
+$navbar-brand-padding-y: 0 !default;
+$navbar-toggler-padding-y: $input-btn-padding-y;
+$navbar-toggler-padding-x: $input-btn-padding-x;
+$nav-link-color: rgba($white, 0.7);
+$nav-link-hover-color: $white;
+$nav-link-padding-x: 2rem !default;
+$nav-link-font-size: 1rem !default;
+$nav-link-font-weight: 600 !default;
+
+// Offcanvas
+$offcanvas-bg-color: $brand-1;
+$offcanvas-color: $white;
+$offcanvas-font-size: 18px !default;
+$offcanvas-font-weight: $headings-font-weight !default;
+
+// Smooth scrolling offset
+$scroll-margin-top: 95px !default;

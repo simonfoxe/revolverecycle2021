@@ -1,0 +1,10 @@
+/**
+ * Master Gravity Forms style management
+ */
+
+// Note: we grab the Basic CSS from Gravity Forms 2.5 as a starting point
+$gravity-forms-css-path: "../../../../plugins/gravityforms/css/";
+@import 'gravity-forms-basic';
+
+// Then we customize for Bootstrap and theming
+@import 'gravity-forms-overrides';

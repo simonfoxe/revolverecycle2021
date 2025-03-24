@@ -1,0 +1,129 @@
+/**
+ * Footer
+ */
+$footer-color: $white !default;
+
+.app-footer {
+  margin: 40px 0;
+  font-size: 16px;
+  color: $footer-color;
+
+  a {
+    color: $footer-color;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .footer_menu {
+    margin-bottom: 40px;
+
+    h4 {
+      color: $footer-color;
+      font-weight: bold;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+
+    }
+    a {
+      color: rgba($footer-color, 0.7);
+
+      &[href]:hover {
+        color: $footer-color;
+      }
+    }
+  }
+
+  .download-buttons {
+    margin-bottom: 40px;
+    @include media-breakpoint-up(md) {
+      text-align: right;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+}
+
+.footer-contact-details {
+
+  .footer-contact-detail {
+    position: relative;
+    padding-left: 2em;
+    margin: 0.5em 0;
+
+    .footer-contact-detail-icon {
+      position: absolute;
+      left: 0;
+      top: 0.375em;
+    }
+  }
+
+}
+
+
+/**
+ * Colophon
+ */
+
+.colophon {
+  margin: 20px 0 40px;
+  font-size: 14px;
+  color: rgba($footer-color, 0.7);
+
+  .colophon-inner {
+    border-top: 1px solid rgba($footer-color, 0.3);
+    padding-top: 30px;
+    > .row > div {
+      margin-bottom: 20px;
+    }
+  }
+
+  a {
+    color: $footer-color;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .colophon_menu {
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      padding-left: 0;
+      margin: 0;
+
+      @include media-breakpoint-up(md) {
+        justify-content: flex-end;;
+      }
+    }
+
+    li {
+      margin-left: 1em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: rgba($footer-color, 0.7);
+
+      &[href]:hover {
+        color: $footer-color;
+      }
+    }
+  }
+}

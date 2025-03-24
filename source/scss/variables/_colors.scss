@@ -1,0 +1,153 @@
+
+/**
+ * Brand Definition
+ */
+
+// Set a specific jump point for requesting color jumps
+$brand-color-interval: 8%;
+
+// Brands colors
+$brand-1: #5092CE !default;
+$brand-2: #1E4164 !default;
+$brand-3: #F7941E !default;
+$brand-4: #5a5f6c !default;
+$brand-5: #f7f7f7 !default;
+
+// Alerts
+$brand-alert-1: #FF6F00 !default;
+$brand-alert-2: #E31A37 !default;
+$brand-alert-3: #4CB050 !default;
+$brand-alert-1-light: #FFF9F5 !default;
+$brand-alert-2-light: #FEF8F9 !default;
+$brand-alert-3-light: #EDF7EE !default;
+
+// Grayscales
+$brand-grayscale-0: #000 !default;
+$brand-grayscale-1: #323232 !default;
+$brand-grayscale-2: #585858 !default;
+$brand-grayscale-3: #7F7F7F !default;
+$brand-grayscale-4: #BCBCBC !default;
+$brand-grayscale-5: #E2E2E2 !default;
+$brand-grayscale-6: #F5F5F5 !default;
+$brand-grayscale-7: #fff !default;
+
+// Brand Colors array
+$brand-colors: () !default;
+$brand-colors: map-merge(
+  (
+    "brand-1": $brand-1,
+    "brand-2": $brand-2,
+    "brand-3": $brand-3,
+    "brand-4": $brand-4,
+    "brand-5": $brand-5,
+  ),
+  $brand-colors
+);
+
+// Gradients
+$brand-gradient-1: linear-gradient(var(--bs-white) 0, var(--bs-brand-5) 100%);
+$brand-gradients: () !default;
+$brand-gradients: map-merge(
+  (
+    "brand-gradient-1": $brand-gradient-1,
+  ),
+  $brand-gradients
+);
+
+
+// Bootstrap Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+$white      : #ffffff !default;
+$gray-100   : #f8f9fa !default;
+$gray-200   : #e9ecef !default;
+$gray-300   : #dee2e6 !default;
+$gray-400   : #c4c0cd !default;
+$gray-500   : #e5e5e5 !default;
+$gray-600   : #7f7f7f !default;
+$gray-700   : #e2e2e2 !default;
+$gray-800   : #bfbfbf !default;
+$gray-900   : #41413f !default;
+$black      : #000000 !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    // Brand colors
+    "brand-1" : $brand-1,
+    "brand-2" : $brand-2,
+    "brand-3" : $brand-3,
+    "brand-4" : $brand-4,
+    "brand-5" : $brand-5,
+
+    // Primary colors
+    "white"   : $white,
+    "black"   : $black,
+    /*
+    "blue"    : $blue,
+    "red"     : $red,
+    "orange"  : $orange,
+    "yellow"  : $yellow,
+    "green"   : $green,
+    */
+  ),
+  $colors
+);
+
+
+$primary:       $brand-2 !default;
+$secondary:     $brand-1 !default;
+$tertiary:      $brand-3 !default;
+$success:       $brand-alert-3 !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tertiary":   $tertiary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
