@@ -12,6 +12,7 @@ $container = apply_filters('container_class', "container");
 // Get optional ACF fields
 $company_logo     = get_field('company_logo_footer', 'option');
 $company_logo2    = get_field('company_logo_footer2', 'option');
+$company_logo2_link = get_field('company_logo_footer2_link', 'option');
 $company_phone    = get_field('company_phone', 'option');
 $company_email    = get_field('company_email', 'option');
 $company_address  = get_field('company_address', 'option');
@@ -50,8 +51,10 @@ $social_instagram = get_field('social_instagram', 'option');
             if ( isset($company_logo2['url']) && $company_logo2['url']):
               // Filter the footer logo
               $company_logo2 = apply_filters('dms_footer_logo', $company_logo2);
+              $link_url = isset($company_logo2_link['url']) && $company_logo2_link['url'] ? $company_logo2_link['url'] : "#";
+              $link_target = isset($company_logo2_link['target']) && $company_logo2_link['target'] ? $company_logo2_link['target'] : "";
               ?>
-              <a class="footer-logo" href="<?php echo home_url(); ?>">
+              <a class="footer-logo" href="<?= $link_url; ?>" target="<?= $link_target; ?>">
                 <img class="mb-3" src="<?php echo $company_logo2['url'] ?>" loading="lazy" alt="<?php echo get_bloginfo(); ?>" width="180" height="156" >
               </a>
             <?php endif; ?>
@@ -83,7 +86,7 @@ $social_instagram = get_field('social_instagram', 'option');
         ?>
         <div class="col-auto">
           <div class="footer-contact-details mb-5">
-            <h3 id="contact" class="has-white-color mt-0 mb-3">Contact</h3>
+            <h4 id="contact" class="has-white-color mt-0 mb-3">Contact</h4>
             <?php
             if ( $company_email ) {
               ?>

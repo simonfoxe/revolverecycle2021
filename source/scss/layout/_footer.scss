@@ -17,31 +17,43 @@ $footer-color: $white !default;
     }
   }
 
+  h4 {
+    color: $footer-color;
+    font-weight: bold !important;
+    margin-bottom: 1em;
+  }
+
   .footer_menu {
     margin-bottom: 40px;
 
-    h4 {
-      color: $footer-color;
-      font-weight: bold;
-    }
+
     ul {
       list-style: none;
       padding-left: 0;
-    }
-    li {
 
+      ul {
+        margin-left: 0.5em;
+      }
     }
+
     a {
       color: rgba($footer-color, 0.7);
 
       &[href]:hover {
         color: $footer-color;
       }
+
+      .nav-caret {
+        padding-left: 0.25em;
+        color: #57c26c;
+      }
     }
+
   }
 
   .download-buttons {
     margin-bottom: 40px;
+
     @include media-breakpoint-up(md) {
       text-align: right;
     }

@@ -185,7 +185,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -200,6 +200,23 @@
             "mime_types": "",
             "allow_in_bindings": 1,
             "preview_size": "medium"
+        },
+        {
+            "key": "field_67e222dc01e0d",
+            "label": "Logo - Footer 2 - Link",
+            "name": "company_logo_footer2_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_61849a10bbcfb",
@@ -423,5 +440,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742750009
+    "modified": 1742873408
 }
